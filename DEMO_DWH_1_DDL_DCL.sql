@@ -3,12 +3,6 @@ CREATE SCHEMA IF NOT EXISTS bl_cl;
 
 SET search_path = bl_cl;
 
-DROP USER developer;
-CREATE USER developer WITH PASSWORD 'developer';
-GRANT ALL PRIVILEGES ON SCHEMA bl_cl TO developer; 
-
-
-
 DROP EXTENSION IF EXISTS file_fdw CASCADE;
 CREATE EXTENSION file_fdw;
 CREATE SERVER pglog FOREIGN DATA WRAPPER file_fdw;
@@ -36,37 +30,37 @@ CREATE FOREIGN TABLE sa_cash_sales.ext_cash_sales (
 	quantity VARCHAR(4000),
 	revenue VARCHAR(4000),
 	regular_price VARCHAR(4000),
-    COST VARCHAR(4000),
-    amount VARCHAR(4000),
-    product_name VARCHAR(4000),
-    category_id VARCHAR(4000),
-    category VARCHAR(4000),
-    promotion_id VARCHAR(4000),
-    promotion VARCHAR(4000),
-    store VARCHAR(4000),
-    store_address_id VARCHAR(4000),
-    store_address VARCHAR(4000),
-    store_city_id VARCHAR(4000),
-    store_city VARCHAR(4000),
-    employee_id VARCHAR(4000),
-    employee_firstname VARCHAR(4000),
-    employee_secondname VARCHAR(4000),
-    employee_birth VARCHAR(4000),
-    employee_city_id VARCHAR(4000),
-    employee_city VARCHAR(4000),
-    customer_id VARCHAR(4000),
-    customer_firstname VARCHAR(4000),
-    customer_surname VARCHAR(4000),
-    customer_gender VARCHAR(4000),
-    customer_birth VARCHAR(4000),
-    customer_email VARCHAR(4000),
-    customer_address_id VARCHAR(4000),
-    customer_address VARCHAR(4000),
-    customer_city_id VARCHAR(4000),
-    customer_city VARCHAR(4000),
-    payment_method_id VARCHAR(4000),
-    payment VARCHAR(4000),
-    transaction_id VARCHAR(4000)
+	COST VARCHAR(4000),
+    	amount VARCHAR(4000),
+    	product_name VARCHAR(4000),
+    	category_id VARCHAR(4000),
+    	category VARCHAR(4000),
+    	promotion_id VARCHAR(4000),
+    	promotion VARCHAR(4000),
+    	store VARCHAR(4000),
+    	store_address_id VARCHAR(4000),
+    	store_address VARCHAR(4000),
+    	store_city_id VARCHAR(4000),
+    	store_city VARCHAR(4000),
+    	employee_id VARCHAR(4000),
+    	employee_firstname VARCHAR(4000),
+    	employee_secondname VARCHAR(4000),
+    	employee_birth VARCHAR(4000),
+    	employee_city_id VARCHAR(4000),
+    	employee_city VARCHAR(4000),
+    	customer_id VARCHAR(4000),
+    	customer_firstname VARCHAR(4000),
+    	customer_surname VARCHAR(4000),
+    	customer_gender VARCHAR(4000),
+    	customer_birth VARCHAR(4000),
+    	customer_email VARCHAR(4000),
+    	customer_address_id VARCHAR(4000),
+    	customer_address VARCHAR(4000),
+    	customer_city_id VARCHAR(4000),
+    	customer_city VARCHAR(4000),
+    	payment_method_id VARCHAR(4000),
+    	payment VARCHAR(4000),
+    	transaction_id VARCHAR(4000)
 	) SERVER pglog
 OPTIONS (filename 'D:\Projects\EpamLabFiles\dataset\cash.CSV', format 'csv', delimiter ',', header 'true');
 
@@ -79,44 +73,41 @@ CREATE TABLE IF NOT EXISTS sa_cash_sales.src_cash_sales (
 	quantity VARCHAR(4000),
 	revenue VARCHAR(4000),
 	regular_price VARCHAR(4000),
-    COST VARCHAR(4000),
-    amount VARCHAR(4000),
-    product_name VARCHAR(4000),
-    category_id VARCHAR(4000),
-    category VARCHAR(4000),
-    promotion_id VARCHAR(4000),
-    promotion VARCHAR(4000),
-    store VARCHAR(4000),
-    store_address_id VARCHAR(4000),
-    store_address VARCHAR(4000),
-    store_city_id VARCHAR(4000),
-    store_city VARCHAR(4000),
-    employee_id VARCHAR(4000),
-    employee_firstname VARCHAR(4000),
-    employee_secondname VARCHAR(4000),
-    employee_birth VARCHAR(4000),
-    employee_city_id VARCHAR(4000),
-    employee_city VARCHAR(4000),
-    customer_id VARCHAR(4000),
-    customer_firstname VARCHAR(4000),
-    customer_surname VARCHAR(4000),
-    customer_gender VARCHAR(4000),
-    customer_birth VARCHAR(4000),
-    customer_email VARCHAR(4000),
-    customer_address_id VARCHAR(4000),
-    customer_address VARCHAR(4000),
-    customer_city_id VARCHAR(4000),
-    customer_city VARCHAR(4000),
-    payment_method_id VARCHAR(4000),
-    payment VARCHAR(4000),
-    transaction_id VARCHAR(4000));
+    	COST VARCHAR(4000),
+    	amount VARCHAR(4000),
+    	product_name VARCHAR(4000),
+    	category_id VARCHAR(4000),
+    	category VARCHAR(4000),
+    	promotion_id VARCHAR(4000),
+    	promotion VARCHAR(4000),
+    	store VARCHAR(4000),
+    	store_address_id VARCHAR(4000),
+    	store_address VARCHAR(4000),
+    	store_city_id VARCHAR(4000),
+    	store_city VARCHAR(4000),
+    	employee_id VARCHAR(4000),
+    	employee_firstname VARCHAR(4000),
+    	employee_secondname VARCHAR(4000),
+    	employee_birth VARCHAR(4000),
+    	employee_city_id VARCHAR(4000),
+    	employee_city VARCHAR(4000),
+    	customer_id VARCHAR(4000),
+    	customer_firstname VARCHAR(4000),
+    	customer_surname VARCHAR(4000),
+    	customer_gender VARCHAR(4000),
+    	customer_birth VARCHAR(4000),
+    	customer_email VARCHAR(4000),
+    	customer_address_id VARCHAR(4000),
+    	customer_address VARCHAR(4000),
+    	customer_city_id VARCHAR(4000),
+    	customer_city VARCHAR(4000),
+    	payment_method_id VARCHAR(4000),
+    	payment VARCHAR(4000),
+    	transaction_id VARCHAR(4000));
    
 ALTER TABLE sa_cash_sales.src_cash_sales
 ADD COLUMN is_processed BOOLEAN DEFAULT FALSE;
 
-SELECT *
-FROM information_schema.COLUMNS
-WHERE table_name = 'src_cash_sales';
 -----------------------------------		   
 		   
 DROP SCHEMA IF EXISTS sa_card_sales CASCADE;		   

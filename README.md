@@ -1,3 +1,4 @@
+### Суть проекта
 Это мой учебный проект хранилища данных в PostgreSQL. Идея в том, что из [источника](https://drive.google.com/drive/folders/12gPWRWku1FBQrulvPyrthSajBrL2CE6E?usp=sharing) (csv файлы) данные о продажах в сети магазинов проходят через несколько ступеней обработки и попадают в таблицы в слое 3nf и в слое dm. При изменении csv файлов и повторном запуске в таблицах на последних слоях появятся только новые данные, а старые, если в них были изменения, будут редактированы.
 
 [Схема слоя 3nf.](https://github.com/spike0spiegel/dwh_demo_meniailov/blob/main/3nf_scheme.png)
@@ -6,7 +7,7 @@
 
 [Схема движения данных для таблицы фактов.](https://github.com/spike0spiegel/dwh_demo_meniailov/blob/main/data_flow.png)
 
-## Описание файлов с кодом:
+### Описание файлов с кодом
 
 [dataset_creation.ipynb](https://github.com/spike0spiegel/dwh_demo_meniailov/blob/main/dataset_creation.ipynb)  - это код на Python, который берёт первичный датасет, скаченный с kaggle и приводит его к подходящему к требованиям проекта состоянию. В основном там удаляются ненужные колонки и добавляются новые. Используется pandas, numpy и библиотека Faker для генерации данных. Он сделан в Jupyter Notebook, но его можно просматривать в PyCharm. 
 

@@ -1,8 +1,10 @@
 Это мой учебный проект хранилища данных в PostgreSQL. Идея в том, что из [источника](https://drive.google.com/drive/folders/12gPWRWku1FBQrulvPyrthSajBrL2CE6E?usp=sharing) (csv файлы) данные о продажах в сети магазинов проходят через несколько ступеней обработки и попадают в таблицы в слое 3nf и в слое dm. При изменении csv файлов и повторном запуске в таблицах на последних слоях появятся только новые данные, а старые, если в них были изменения, будут редактированы.
 
 [Схема слоя 3nf.](https://github.com/spike0spiegel/dwh_demo_meniailov/blob/main/3nf_scheme.png)
+
 [Схема слоя dm.](https://github.com/spike0spiegel/dwh_demo_meniailov/blob/main/dm_scheme.png)
-[Схема движения данных для таблицы фактов.]()
+
+[Схема движения данных для таблицы фактов.](https://github.com/spike0spiegel/dwh_demo_meniailov/blob/main/data_flow.png)
 
 Описание файлов с кодом:
 

@@ -6,7 +6,7 @@
 
 [Схема движения данных для таблицы фактов.](https://github.com/spike0spiegel/dwh_demo_meniailov/blob/main/data_flow.png)
 
-Описание файлов с кодом:
+## Описание файлов с кодом:
 
 [dataset_creation.ipynb](https://github.com/spike0spiegel/dwh_demo_meniailov/blob/main/dataset_creation.ipynb)  - это код на Python, который берёт первичный датасет, скаченный с kaggle и приводит его к подходящему к требованиям проекта состоянию. В основном там удаляются ненужные колонки и добавляются новые. Используется pandas, numpy и библиотека Faker для генерации данных. Он сделан в Jupyter Notebook, но его можно просматривать в PyCharm. 
 
